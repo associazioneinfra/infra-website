@@ -24,16 +24,18 @@ HTML
 
     /* CONTAINER PER LE SEZIONI */
     section {
-      height: 100vh;
-      width: 100vw;
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 1px solid #21262D;
+  min-height: 100vh; /* Permette alla sezione di espandersi se c'è molto testo */
+  height: auto;
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem; /* Più spazio verticale per traspirare */
+  text-align: center;
+  border-bottom: 1px solid #21262D;
+}
     }
 
     /* TYPOGRAPHY */
