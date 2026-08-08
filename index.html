@@ -1,0 +1,179 @@
+HTML
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INFRA | Tecnologia è Politica</title>
+  <style>
+    /* RESET & BASE */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      height: 100%;
+      background-color: #0D1117;
+      color: #F0F6FC;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory; /* SCROLL SNAP A BLOCCO */
+    }
+
+    /* CONTAINER PER LE SEZIONI */
+    section {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #21262D;
+    }
+
+    /* TYPOGRAPHY */
+    .tag {
+      color: #00FF66; /* VERDE NEON TERMINALE */
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #00FF66;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      max-width: 650px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #8B949E;
+      margin-bottom: 2rem;
+    }
+
+    /* BOTTONI */
+    .btn {
+      background: #00FF66;
+      color: #0D1117;
+      padding: 0.8rem 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* GRIGLIA REGOLE */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      max-width: 800px;
+      width: 100%;
+      margin-top: 1rem;
+      text-align: left;
+    }
+
+    .card {
+      background: #161B22;
+      border: 1px solid #30363D;
+      padding: 1.2rem;
+      border-radius: 6px;
+    }
+
+    .card h3 {
+      color: #F0F6FC;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+    }
+
+    /* FORM CONTAINER */
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      height: 450px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SCHERMO 1: HERO -->
+  <section>
+    <div class="tag">[ INFRA ]</div>
+    <h1>Tecnologia è Politica.</h1>
+    <p>Non siamo un think tank, non commentiamo il futuro: progettiamo cultura e infrastrutture politiche sovrane per l'Italia e l'Europa[cite: 1]. Siamo policy-thinkers operativi[cite: 1].</p>
+    <a href="#cantiere" class="btn">[ Entra nei Cantieri ]</a>
+  </section>
+
+  <!-- SCHERMO 2: CANTIERE #01 & REGOLE -->
+  <section id="cantiere">
+    <div class="tag">Tavolo Operativo</div>
+    <h2>Cantiere #01: AI e Lavoro</h2>
+    <p>Affrontiamo in modo analitico e orizzontale l'impatto dell'AI su occupazione, salari e dignità del lavoro cognitivo[cite: 1]. Le nostre 4 regole di ingaggio[cite: 1]:</p>
+    
+    <div class="grid">
+      <div class="card">
+        <h3>1. Segretezza</h3>
+        <p>Vige la segretezza assoluta su persone e aziende. Contano solo i dati e le idee[cite: 1].</p>
+      </div>
+      <div class="card">
+        <h3>2. Orizzontalità</h3>
+        <p>Niente "esperti" o panelist. Interventi timeboxed di max 3 minuti[cite: 1].</p>
+      </div>
+      <div class="card">
+        <h3>3. Rispetto delle Fasi</h3>
+        <p>Fase 1: Diagnosi. Fase 2: Cantiere e Proposte concrete[cite: 1].</p>
+      </div>
+      <div class="card">
+        <h3>4. Radicalità Franca</h3>
+        <p>Attacca l'idea, mai la persona[cite: 1].</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHERMO 3: FORM ONBOARDING (TALLY) -->
+  <section>
+    <div class="tag">Partecipa</div>
+    <h2>Accedi alle Cartelle di Lavoro</h2>
+    <p>Compila il modulo per accedere alle analisi e partecipare ai tavoli[cite: 1].</p>
+    
+    <div class="form-container">
+      <!-- Sostituisci il link src qui sotto con quello del tuo form Tally -->
+      <iframe src="https://tally.so/embed/wzXG1p?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"></iframe>
+    </div>
+  </section>
+
+</body>
+</html>
