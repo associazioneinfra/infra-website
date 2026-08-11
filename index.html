@@ -155,7 +155,7 @@ HTML
       color: var(--text-main);
     }
 
-    /* MANIFESTO GRID */
+    /* MANIFESTO & CONTENT GRID */
     .manifesto-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -238,11 +238,18 @@ HTML
       color: var(--text-main);
     }
 
-    .contact-box {
+    /* BOX CONTENT (NETWORK E PUBBLICAZIONI) */
+    .content-box {
       background: var(--surface);
       border: 1px solid var(--border);
       padding: 2.5rem;
       margin-top: 1.5rem;
+    }
+
+    .content-box p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     .contact-mail {
@@ -252,7 +259,7 @@ HTML
       text-decoration: none;
       font-weight: 700;
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     .contact-mail:hover {
@@ -299,8 +306,8 @@ HTML
     <p class="hero-lead">Rifiutiamo i talk show di esperti e il mero esercizio regolatorio. Progettiamo la sovranità tecnologica, pubblica e industriale d'Italia ed Europa.</p>
     <div class="btn-group">
       <a href="#manifesto" class="btn">Leggi il Manifesto</a>
-      <a href="#contatti" class="btn btn-secondary">Contatti</a>
-      <a href="https://infra.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Substack</a>
+      <a href="#network" class="btn btn-secondary">Network</a>
+      <a href="#pubblicazioni" class="btn btn-secondary">Pubblicazioni</a>
     </div>
   </section>
 
@@ -313,7 +320,7 @@ HTML
         
         <div class="manifesto-body">
           <h3>I. La Diagnosi</h3>
-          <p>La questione della tecnologia è sempre, essenzialmente, una questione politica. Dal mito del fuoco di Prometeo alla sperimentazione nucleare, dall’invenzione della stampa fino alla diffusione dell’intelligenza artificiale, l’innovazione su larga scala è causa e conseguenza diretta del potere politico, economico e militare.</p>
+          <p>La questione della tecnologia è sempre, essessialmente, una questione politica. Dal mito del fuoco di Prometeo alla sperimentazione nucleare, dall’invenzione della stampa fino alla diffusione dell’intelligenza artificiale, l’innovazione su larga scala è causa e conseguenza diretta del potere politico, economico e militare.</p>
           <p>Oggi la tecnologia rappresenta il principale motore di crescita economica, progresso scientifico e trasformazione sociale. Se orientata da una visione chiara, racchiude un potenziale straordinariamente benefico per la collettività e per la tutela dell'ambiente; al contempo, se priva di indirizzo politico, rischia di accentuare le disuguaglianze e i rischi sistemici. Il tema fondamentale, pertanto, non risiede nell'alternativa sterile tra innovazione e regolazione, ma nella costruzione di istituzioni capaci di indirizzare il progresso verso obiettivi strutturalmente condivisi.</p>
           <p>Poiché la tecnologia plasma le modalità con cui lavoriamo, apprendiamo, produciamo e partecipiamo alla vita pubblica, essa deve rientrare a pieno titolo nelle decisioni politiche collettive:</p>
           
@@ -342,15 +349,29 @@ HTML
     </div>
   </section>
 
-  <!-- CONTACT & ONBOARDING SECTION -->
-  <section id="contatti">
+  <!-- NETWORK SECTION -->
+  <section id="network">
     <div class="manifesto-grid">
       <div class="section-title">// 02. NETWORK</div>
       <div class="manifesto-content">
-        <h2>Entra in contatto con noi.</h2>
-        <div class="contact-box">
+        <h2>Adesioni e contatti.</h2>
+        <div class="content-box">
           <p>L'associazione non ha ancora aperto ufficialmente le iscrizioni e le adesioni formali. Tuttavia, se condividi la nostra visione e vuoi avviare un confronto, proporre un'idea o entrare in contatto con il team, puoi scriverci direttamente a:</p>
           <a href="mailto:infra@associazioneinfra.com" class="contact-mail">infra@associazioneinfra.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBBLICAZIONI SECTION -->
+  <section id="pubblicazioni">
+    <div class="manifesto-grid">
+      <div class="section-title">// 03. PUBBLICAZIONI</div>
+      <div class="manifesto-content">
+        <h2>Analisi rigorose, zero retorica.</h2>
+        <div class="content-box">
+          <p>Pubblichiamo regolarmente report di approfondimento, analisi di policy e interventi critici sul nostro canale Substack ufficiale. È lo strumento con cui documentiamo la nostra attività d'analisi e apriamo il dibattito pubblico sui temi della sovranità tecnologica.</p>
+          <a href="https://infra.substack.com" target="_blank" rel="noopener noreferrer" class="btn" style="margin-top: 1.5rem;">Leggi INFRA su Substack</a>
         </div>
       </div>
     </div>
@@ -359,7 +380,7 @@ HTML
   <!-- FOOTER -->
   <footer>
     <div>INFRA © 2026 // ASSOCIAZIONEINFRA.COM</div>
-    <div><a href="https://infra.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a></div>
+    <div><a href="https://associazioneinfra.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a></div>
     <div>SOVRANITÀ TECNOLOGICA ED EUROPEA</div>
   </footer>
 
