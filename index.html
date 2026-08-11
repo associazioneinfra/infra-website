@@ -4,166 +4,360 @@ HTML
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>INFRA | Tecnologia è Politica</title>
+  <title>INFRA // Tecnologia è Politica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;700&family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+  
   <style>
-    /* RESET & BASE */
-    * {
+    /* RESET & DENSITÀ SWISS */
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
-    html, body {
-      height: 100%;
-      background-color: #0D1117;
-      color: #F0F6FC;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory; /* SCROLL SNAP A BLOCCO */
+
+    :root {
+      --bg: #111315;
+      --surface: #181B1E;
+      --border: #2A2E33;
+      --text-main: #EDEFF2;
+      --text-muted: #8A929B;
+      --accent: #FF4D00; /* Safety Orange: Cantiere/Infrastruttura */
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'Chivo Mono', monospace;
     }
 
-    /* CONTAINER PER LE SEZIONI */
-    section {
-  min-height: 100vh; /* Permette alla sezione di espandersi se c'è molto testo */
-  height: auto;
-  width: 100vw;
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem; /* Più spazio verticale per traspirare */
-  text-align: center;
-  border-bottom: 1px solid #21262D;
-}
+    html {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* TYPOGRAPHY */
-    .tag {
-      color: #00FF66; /* VERDE NEON TERMINALE */
-      font-size: 0.9rem;
+    body {
+      max-width: 1200px;
+      margin: 0 auto;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+
+    /* HEADER / BARRA DI STATO */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: -1px;
+    .brand {
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent);
+      display: inline-block;
+    }
+
+    .status-tag {
+      color: var(--text-muted);
+    }
+
+    .status-tag span {
+      color: var(--accent);
+    }
+
+    /* SEZIONI A GRIGLIA RIGIDA */
+    section {
+      padding: 5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 7rem 2rem 5rem 2rem;
+    }
+
+    .meta-code {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
       margin-bottom: 1.5rem;
     }
 
-    h2 {
-      font-size: 2rem;
-      color: #00FF66;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      max-width: 650px;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #8B949E;
-      margin-bottom: 2rem;
-    }
-
-    /* BOTTONI */
-    .btn {
-      background: #00FF66;
-      color: #0D1117;
-      padding: 0.8rem 1.8rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 4px;
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
       text-transform: uppercase;
-      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      max-width: 15ch;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.15rem, 2vw, 1.4rem);
+      color: var(--text-muted);
+      max-width: 55ch;
+      font-weight: 400;
+      line-height: 1.4;
+      margin-bottom: 3rem;
+    }
+
+    /* BOTTONI BRUTALISTI */
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--text-main);
+      color: var(--bg);
+      padding: 1rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
       letter-spacing: 1px;
-      transition: opacity 0.2s;
+      border: 1px solid var(--text-main);
+      transition: all 0.15s ease;
     }
 
     .btn:hover {
-      opacity: 0.9;
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFF;
     }
 
-    /* GRIGLIA REGOLE */
-    .grid {
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface);
+      border-color: var(--text-main);
+      color: var(--text-main);
+    }
+
+    /* MANIFESTO GRID */
+    .manifesto-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      max-width: 800px;
-      width: 100%;
-      margin-top: 1rem;
-      text-align: left;
+      grid-template-columns: 1fr;
+      gap: 3rem;
     }
 
-    .card {
-      background: #161B22;
-      border: 1px solid #30363D;
-      padding: 1.2rem;
-      border-radius: 6px;
+    @media (min-width: 850px) {
+      .manifesto-grid {
+        grid-template-columns: 300px 1fr;
+      }
     }
 
-    .card h3 {
-      color: #F0F6FC;
-      font-size: 1rem;
+    .section-title {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      position: sticky;
+      top: 5rem;
+    }
+
+    .manifesto-content h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .manifesto-body p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .manifesto-body p strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* REGOLE D'INGAGGIO (CARDS A GRIGLIA) */
+    .rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    .rule-card {
+      background: var(--surface);
+      padding: 1.75rem;
+    }
+
+    .rule-num {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .rule-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
-    .card p {
-      font-size: 0.85rem;
+    .rule-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.4;
       margin-bottom: 0;
     }
 
     /* FORM CONTAINER */
+    .form-wrapper {
+      max-width: 650px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2rem;
+    }
+
     .form-container {
       width: 100%;
-      max-width: 600px;
-      height: 450px;
+      min-height: 500px;
     }
 
     iframe {
       width: 100%;
-      height: 100%;
+      height: 500px;
       border: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--bg);
     }
   </style>
 </head>
 <body>
 
-  <!-- SCHERMO 1: HERO -->
-  <section>
-    <h1>INFRA.</h1>
-    <p>Non siamo un think tank, non commentiamo il futuro: progettiamo cultura e infrastrutture politiche sovrane per l'Italia e l'Europa. Siamo policy-thinkers operativi.</p>
-    <a href="#cantiere" class="btn">[ Leggi il Manifesto ]</a>
-  </section>
+  <!-- BARRA DI STATO -->
+  <header>
+    <a href="#" class="brand">
+      <span class="brand-dot"></span> INFRA // POLICY THINKERS
+    </a>
+    <div class="status-tag">STATUS: <span>CANTIERE #01 ATTIVO</span></div>
+  </header>
 
-  <!-- SCHERMO 2: CANTIERE #01 & REGOLE -->
-  <section id="Manifesto">
-    <div class="tag">Manifesto</div>
-    <h2>Tecnologia è politica.</h2>
-    <p>La questione della tecnologia è sempre essenzialmente politica. Dal mito del fuoco di Prometeo alla sperimentazione nucleare, dall’invenzione della stampa alla diffusione dell’intelligenza artificiale, l’innovazione su larga scala è sempre stata causa e conseguenza di potere politico, economico, militare.
-La tecnologia è oggi il principale motore di crescita economica, progresso scientifico e trasformazione sociale. Può essere incredibilmente benefica per noi e per il pianeta se sappiamo come utilizzarla ma può anche aumentare disuguaglianze e rischi per la collettività, se non accompagnata da una visione politica.. Per questo il tema non è scegliere tra innovazione e regolazione, ma costruire istituzioni capaci di orientare l'innovazione verso obiettivi condivisi.
-La tecnologia influenza il modo in cui lavoriamo, apprendiamo, produciamo e partecipiamo alla vita pubblica, pertanto deve far parte delle decisioni politiche collettive..
-Tutti noi sentiamo innanzitutto impatti sul nostro lavoro, dove l’utilizzo dell’AI sta diventando quotidiano per milioni di lavoratori cognitivi, con la promessa di azzerare i task ripetitivi e liberare tempo per la creatività. 
-La tecnologia ha poi risvolti importanti sulla sicurezza delle nostre istituzioni, sia perché ne condiziona lo sviluppo economico, sia perché se in mano a potenze non democratiche può essere utilizzata come arma. La politica deve guidare questo processo e porre i presidi necessari a tutela dei diritti fondamentali.
-Anche se sono strumenti immateriali, dati e modelli per funzionare hanno bisogno di enormi infrastrutture fisiche il cui utilizzo richiede notevoli quantità di acqua e di energia che possono incidere in maniera sensibile sull’ambiente e sul territorio. 
-Infine, a differenza delle tecnologie del passato, gli strumenti moderni entrano nelle nostre case, guidano i nostri gusti culturali, le nostre decisioni d’acquisto e il modo in cui ci relazioniamo con la comunità e la società. Nessuno deve essere lasciato indietro.
-Negli ultimi anni la politica italiana ha spesso affrontato la tecnologia come un dossier specialistico o un problema da disciplinare. È una prospettiva insufficiente e priva di visione a lungo termine. 
-Su temi così cruciali, non possiamo lasciare che la politica si riduca ad un mero esercizio regolatorio. Serve una politica che smetta di inseguire il cambiamento e inizi a guidarlo, usandolo come una leva di sviluppo che metta davvero al centro il bene comune. Per farlo la politica si deve aprire al dialogo con chi abita questa trasformazione: le comunità di lavoratori e cittadini. È solo tramite il confronto politico con queste comunità che si potrà definire il Paese che vogliamo costruire nei prossimi vent’anni.
-:</p>
-    
-  <!-- SCHERMO 3: FORM ONBOARDING (TALLY) -->
-  <section>
-    <div class="tag">Partecipa</div>
-    <h2>Accedi</h2>
-    <p>Compila il modulo per accedere alle analisi e partecipare ai tavoli[cite: 1].</p>
-    
-    <div class="form-container">
-      <!-- Sostituisci il link src qui sotto con quello del tuo form Tally -->
-      <iframe src="https://tally.so/embed/wzXG1p?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"></iframe>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="meta-code">// PROTOCOLLO OPERATIVO 01</div>
+    <h1>Tecnologia è Politica.</h1>
+    <p class="hero-lead">Rifiutiamo i talk show di esperti e il mero esercizio regolatorio. Progettiamo la sovranità tecnologica, pubblica e industriale d'Italia ed Europa.</p>
+    <div class="btn-group">
+      <a href="#manifesto" class="btn">Leggi il Manifesto</a>
+      <a href="#partecipa" class="btn btn-secondary">Accedi ai Cantieri</a>
     </div>
   </section>
+
+  <!-- MANIFESTO SECTION -->
+  <section id="manifesto">
+    <div class="manifesto-grid">
+      <div class="section-title">// 01. MANIFESTO</div>
+      <div class="manifesto-content">
+        <h2>La tecnologia non è un dossier specialistico. È la sostanza stessa del potere.</h2>
+        <div class="manifesto-body">
+          <p>Dalla stampa all'intelligenza artificiale, l'innovazione su larga scala è sempre stata causa e conseguenza di potere politico, economico e militare. Può amplificare la libertà o strutturare nuove forme di subordinazione.</p>
+          <p><strong>Non intendiamo scegliere tra cieco tecno-ottimismo e paralisi regolatoria.</strong> La politica italiana ha ridotto la tecnologia a un problema da disciplinare ex-post. È una postura rinunciataria. Serve costruire istituzioni e infrastrutture capaci di guidare la trasformazione verso scopi sovrani e condivisi.</p>
+          <p>I dati, l'energia, la potenza di calcolo e l'impatto sul lavoro cognitivo sono nodi materiali. Richiedono diagnosi guidate dai dati e proposte legislative pronte per l'esecuzione.</p>
+        </div>
+
+        <!-- REGOLE DI INGAGGIO -->
+        <div class="rules-grid">
+          <div class="rule-card">
+            <div class="rule-num">01 / METODO</div>
+            <h3>Timeboxing</h3>
+            <p>Interventi operativi di massimo 3 minuti nei tavoli. Zero retorica, solo tesi ed evidenze.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">02 / SICUREZZA</div>
+            <h3>Fonti Protette</h3>
+            <p>Tutela rigorosa dei contributi tecnici provenienti da PA, industria e accademia.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">03 / STRUTTURA</div>
+            <h3>Orizzontalità</h3>
+            <p>Nessun vertice accademico. Valgono solo il rigore dei dati e la fattibilità della policy.</p>
+          </div>
+          <div class="rule-card">
+            <div class="rule-num">04 / OUTPUT</div>
+            <h3>Codice & Norme</h3>
+            <p>Ogni cantiere produce schemi di legge, emendamenti o infrastrutture open-source.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM ONBOARDING SECTION -->
+  <section id="partecipa">
+    <div class="manifesto-grid">
+      <div class="section-title">// 02. ONBOARDING</div>
+      <div class="manifesto-content">
+        <h2>Accedi ai cantieri operativi.</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Selezioniamo profili tecnici, legali, istituzionali e creativi per i gruppi di lavoro riservati sul Cantiere #01 (AI & Lavoro Cognitivo).</p>
+        
+        <div class="form-wrapper">
+          <div class="form-container">
+            <iframe src="https://tally.so/embed/wzXG1p?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>INFRA © 2026 // ASSOCIAZIONEINFRA.COM</div>
+    <div>SOVRANITÀ TECNOLOGICA ED EUROPEA</div>
+  </footer>
 
 </body>
 </html>
