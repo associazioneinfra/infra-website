@@ -23,7 +23,7 @@ HTML
       --border: #2A2E33;
       --text-main: #EDEFF2;
       --text-muted: #8A929B;
-      --accent: #FF4D00; /* Safety Orange: Cantiere/Infrastruttura */
+      --accent: #FF4D00; /* Safety Orange */
       --font-sans: 'Inter', -apple-system, sans-serif;
       --font-mono: 'Chivo Mono', monospace;
     }
@@ -94,15 +94,6 @@ HTML
     /* HERO SECTION */
     .hero {
       padding: 7rem 2rem 5rem 2rem;
-    }
-
-    .meta-code {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 1.5rem;
     }
 
     h1 {
@@ -247,58 +238,25 @@ HTML
       color: var(--text-main);
     }
 
-    /* REGOLE D'INGAGGIO (CARDS A GRIGLIA) */
-    .rules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin-top: 3rem;
-    }
-
-    .rule-card {
+    .contact-box {
       background: var(--surface);
-      padding: 1.75rem;
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      margin-top: 1.5rem;
     }
 
-    .rule-num {
+    .contact-mail {
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .rule-card h4 {
       font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      display: inline-block;
+      margin-top: 1rem;
     }
 
-    .rule-card p {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-      margin-bottom: 0;
-    }
-
-    /* FORM CONTAINER */
-    .form-wrapper {
-      max-width: 650px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 2rem;
-    }
-
-    .form-container {
-      width: 100%;
-      min-height: 500px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
+    .contact-mail:hover {
+      text-decoration: underline;
     }
 
     /* FOOTER */
@@ -314,6 +272,15 @@ HTML
       color: var(--text-muted);
       background: var(--bg);
     }
+
+    footer a {
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
   </style>
 </head>
 <body>
@@ -323,17 +290,17 @@ HTML
     <a href="#" class="brand">
       <span class="brand-dot"></span> INFRA // POLICY THINKERS
     </a>
-    <div class="status-tag">STATUS: <span>CANTIERE #01 ATTIVO</span></div>
+    <div class="status-tag">STATUS: <span>CANTIERE ATTIVO</span></div>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="meta-code">// PROTOCOLLO OPERATIVO 01</div>
     <h1>Tecnologia è Politica.</h1>
     <p class="hero-lead">Rifiutiamo i talk show di esperti e il mero esercizio regolatorio. Progettiamo la sovranità tecnologica, pubblica e industriale d'Italia ed Europa.</p>
     <div class="btn-group">
       <a href="#manifesto" class="btn">Leggi il Manifesto</a>
-      <a href="#partecipa" class="btn btn-secondary">Accedi ai Cantieri</a>
+      <a href="#contatti" class="btn btn-secondary">Contatti</a>
+      <a href="https://infra.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Substack</a>
     </div>
   </section>
 
@@ -360,57 +327,30 @@ HTML
           <p>Negli ultimi anni la politica italiana ha affrontato la tecnologia come un dossier specialistico o come un problema da disciplinare ex-post. È una prospettiva insufficiente e priva di visione a lungo termine. Su temi così cruciali, la politica non può ridursi a mero esercizio regolatorio: deve smettere di inseguire il cambiamento e iniziare a guidarlo come leva di sviluppo al servizio del bene comune. Per farlo, le istituzioni devono aprirsi al confronto con chi abita direttamente questa trasformazione — le comunità di lavoratori e cittadini — perché è solo attraverso questo dialogo che si potrà definire il Paese che intendiamo costruire nei prossimi vent’anni.</p>
 
           <h3>II. Il Progetto e il Posizionamento</h3>
-          <p>Il progetto di <strong>Infra</strong> nasce con l'ambizione precisa di colonizzare e strutturare questo spazio, fondando in Italia una reale cultura politica della tecnologia. Non ci interessa commentare il futuro: ci interessa progettare il Paese che vogliamo abitare.</p>          <p>Il nostro posizionamento rifiuta le forme tradizionali della rappresentanza e del dibattito d'opinione:</p>
+          <p>Il progetto di <strong>INFRA</strong> nasce con l'ambizione precisa di colonizzare e strutturare questo spazio, fondando in Italia una reale cultura politica della tecnologia. Non ci interessa commentare il futuro: ci interessa progettare il Paese che vogliamo abitare.</p>
+          <p>Il nostro posizionamento rifiuta le forme tradizionali della rappresentanza e del dibattito d'opinione:</p>
 
           <ul class="manifesto-list">
             <li><strong>Non siamo un think tank:</strong> Rifiutiamo la dinamica dei panel e delle conferenze in cui esperti e tecnocrati si limitano a reiterare diagnosi di superficie per ottenere visibilità e consenso, senza conoscere la reale natura dei cambiamenti di cui parlano.</li>
             <li><strong>Non siamo un’associazione culturale:</strong> La consapevolezza critica del presente è destinata a rimanere sterile se non viene orientata all'azione concreta e alla produzione materiale.</li>
           </ul>
 
-          <p><strong>Siamo policy-thinkers operativi.</strong></p>
-          <p><strong>Infra</strong> è un’associazione politica formata da chi abita e attraversa quotidianamente questi mondi: lavoratori del settore tech, avvocati, funzionari e dirigenti della Pubblica Amministrazione, ingegneri e creativi.</p>
+          <p><strong>Siamo policy thinkers operativi. INFRA</strong> è un’associazione politica formata da chi abita e attraversa quotidianamente questi mondi: lavoratori del settore tech, avvocati, funzionari e dirigenti della Pubblica Amministrazione, ingegneri e creativi.</p>
           <p>Il nostro obiettivo è materiale: elaborare proposte politiche e normative solide che rispondano ai problemi reali di oggi, emergendo direttamente dal dibattito e dal lavoro d'analisi dell'associazione. Non organizziamo la passerella dei soliti dibattiti; apriamo cantieri di policy in cui ciascun partecipante mette a disposizione le proprie competenze e la propria sensibilità, affrontando in modo rigoroso e analitico le questioni che toccano da vicino la vita, il lavoro e il futuro della nostra comunità.</p>
-        </div>
-
-        <!-- REGOLE DI INGAGGIO -->
-        <div class="rules-grid">
-          <div class="rule-card">
-            <div class="rule-num">01 / METODO</div>
-            <h4>Timeboxing</h4>
-            <p>Interventi operativi di massimo 3 minuti nei tavoli. Zero retorica, solo tesi ed evidenze.</p>
-          </div>
-          <div class="rule-card">
-            <div class="rule-num">02 / SICUREZZA</div>
-            <h4>Fonti Protette</h4>
-            <p>Tutela rigorosa dei contributi tecnici provenienti da PA, industria e accademia.</p>
-          </div>
-          <div class="rule-card">
-            <div class="rule-num">03 / STRUTTURA</div>
-            <h4>Orizzontalità</h4>
-            <p>Nessun vertice accademico. Valgono solo il rigore dei dati e la fattibilità della policy.</p>
-          </div>
-          <div class="rule-card">
-            <div class="rule-num">04 / OUTPUT</div>
-            <h4>Codice & Norme</h4>
-            <p>Ogni cantiere produce schemi di legge, emendamenti o infrastrutture open-source.</p>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FORM ONBOARDING SECTION -->
-  <section id="partecipa">
+  <!-- CONTACT & ONBOARDING SECTION -->
+  <section id="contatti">
     <div class="manifesto-grid">
-      <div class="section-title">// 02. ONBOARDING</div>
+      <div class="section-title">// 02. NETWORK</div>
       <div class="manifesto-content">
-        <h2>Accedi ai cantieri operativi.</h2>
-        <p style="color: var(--text-muted); margin-bottom: 2rem;">Selezioniamo profili tecnici, legali, istituzionali e creativi per i gruppi di lavoro riservati sul Cantiere #01 (AI & Lavoro Cognitivo).</p>
-        
-        <div class="form-wrapper">
-          <div class="form-container">
-            <iframe src="https://tally.so/embed/wzXG1p?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"></iframe>
-          </div>
+        <h2>Entra in contatto con noi.</h2>
+        <div class="contact-box">
+          <p>L'associazione non ha ancora aperto ufficialmente le iscrizioni e le adesioni formali. Tuttavia, se condividi la nostra visione e vuoi avviare un confronto, proporre un'idea o entrare in contatto con il team, puoi scriverci direttamente a:</p>
+          <a href="mailto:infra@associazioneinfra.com" class="contact-mail">infra@associazioneinfra.com</a>
         </div>
       </div>
     </div>
@@ -419,6 +359,7 @@ HTML
   <!-- FOOTER -->
   <footer>
     <div>INFRA © 2026 // ASSOCIAZIONEINFRA.COM</div>
+    <div><a href="https://infra.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a></div>
     <div>SOVRANITÀ TECNOLOGICA ED EUROPEA</div>
   </footer>
 
