@@ -34,6 +34,7 @@ HTML
       font-family: var(--font-sans);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -172,7 +173,7 @@ HTML
 
     @media (min-width: 850px) {
       .manifesto-grid {
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: 280px 1fr;
       }
     }
 
@@ -184,6 +185,7 @@ HTML
       color: var(--text-muted);
       position: sticky;
       top: 5rem;
+      align-self: start;
     }
 
     .manifesto-content h2 {
@@ -192,6 +194,18 @@ HTML
       line-height: 1.1;
       margin-bottom: 2rem;
       letter-spacing: -0.02em;
+    }
+
+    .manifesto-content h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
     }
 
     .manifesto-body p {
@@ -204,6 +218,33 @@ HTML
     .manifesto-body p strong {
       color: var(--text-main);
       font-weight: 600;
+    }
+
+    .manifesto-list {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .manifesto-list li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .manifesto-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-weight: 700;
+    }
+
+    .manifesto-list li strong {
+      color: var(--text-main);
     }
 
     /* REGOLE D'INGAGGIO (CARDS A GRIGLIA) */
@@ -228,7 +269,7 @@ HTML
       margin-bottom: 0.75rem;
     }
 
-    .rule-card h3 {
+    .rule-card h4 {
       font-size: 1.1rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
@@ -244,7 +285,6 @@ HTML
     /* FORM CONTAINER */
     .form-wrapper {
       max-width: 650px;
-      margin: 0 auto;
       background: var(--surface);
       border: 1px solid var(--border);
       padding: 2rem;
@@ -303,32 +343,55 @@ HTML
       <div class="section-title">// 01. MANIFESTO</div>
       <div class="manifesto-content">
         <h2>La tecnologia non è un dossier specialistico. È la sostanza stessa del potere.</h2>
+        
         <div class="manifesto-body">
-          <p>Dalla stampa all'intelligenza artificiale, l'innovazione su larga scala è sempre stata causa e conseguenza di potere politico, economico e militare. Può amplificare la libertà o strutturare nuove forme di subordinazione.</p>
-          <p><strong>Non intendiamo scegliere tra cieco tecno-ottimismo e paralisi regolatoria.</strong> La politica italiana ha ridotto la tecnologia a un problema da disciplinare ex-post. È una postura rinunciataria. Serve costruire istituzioni e infrastrutture capaci di guidare la trasformazione verso scopi sovrani e condivisi.</p>
-          <p>I dati, l'energia, la potenza di calcolo e l'impatto sul lavoro cognitivo sono nodi materiali. Richiedono diagnosi guidate dai dati e proposte legislative pronte per l'esecuzione.</p>
+          <h3>I. La Diagnosi</h3>
+          <p>La questione della tecnologia è sempre, essenzialmente, una questione politica. Dal mito del fuoco di Prometeo alla sperimentazione nucleare, dall’invenzione della stampa fino alla diffusione dell’intelligenza artificiale, l’innovazione su larga scala è causa e conseguenza diretta del potere politico, economico e militare.</p>
+          <p>Oggi la tecnologia rappresenta il principale motore di crescita economica, progresso scientifico e trasformazione sociale. Se orientata da una visione chiara, racchiude un potenziale straordinariamente benefico per la collettività e per la tutela dell'ambiente; al contempo, se priva di indirizzo politico, rischia di accentuare le disuguaglianze e i rischi sistemici. Il tema fondamentale, pertanto, non risiede nell'alternativa sterile tra innovazione e regolazione, ma nella costruzione di istituzioni capaci di indirizzare il progresso verso obiettivi strutturalmente condivisi.</p>
+          <p>Poiché la tecnologia plasma le modalità con cui lavoriamo, apprendiamo, produciamo e partecipiamo alla vita pubblica, essa deve rientrare a pieno titolo nelle decisioni politiche collettive:</p>
+          
+          <ul class="manifesto-list">
+            <li><strong>Sul Lavoro:</strong> L'impatto dell'intelligenza artificiale è già quotidiano per milioni di lavoratori cognitivi, con la promessa di azzerare i task ripetitivi e liberare tempo da destinare alla dimensione creativa.</li>
+            <li><strong>Sulla Sicurezza e le Istituzioni:</strong> La tecnologia condiziona lo sviluppo economico e, laddove concentrata in contesti privi di controllo democratico, può convertirsi in uno strumento d'offesa. La politica ha il dovere di guidare questo processo e porre i presidi necessari a tutela dei diritti fondamentali.</li>
+            <li><strong>Sull'Ambiente e i Territori:</strong> Pur presentando un'architettura immateriale, dati e modelli richiedono imponenti infrastrutture fisiche, il cui fabbisogno di risorse idriche ed energetiche incide in modo diretto sull'ecosistema e sul territorio.</li>
+            <li><strong>Sulla Società e la Vita Quotidiana:</strong> A differenza dei mezzi del passato, gli strumenti contemporanei penetrano nello spazio domestico, orientano i consumi culturali e le scelte d'acquisto, ridefinendo le relazioni comunitarie. In questa trasformazione, <strong>nessuno deve essere lasciato indietro</strong>.</li>
+          </ul>
+
+          <p>Negli ultimi anni la politica italiana ha affrontato la tecnologia come un dossier specialistico o come un problema da disciplinare ex-post. È una prospettiva insufficiente e priva di visione a lungo termine. Su temi così cruciali, la politica non può ridursi a mero esercizio regolatorio: deve smettere di inseguire il cambiamento e iniziare a guidarlo come leva di sviluppo al servizio del bene comune. Per farlo, le istituzioni devono aprirsi al confronto con chi abita direttamente questa trasformazione — le comunità di lavoratori e cittadini — perché è solo attraverso questo dialogo che si potrà definire il Paese che intendiamo costruire nei prossimi vent’anni.</p>
+
+          <h3>II. Il Progetto e il Posizionamento</h3>
+          <p>Il progetto di <strong>Infra</strong> nasce con l'ambizione precisa di colonizzare e strutturare questo spazio, fondando in Italia una reale cultura politica della tecnologia. Non ci interessa commentare il futuro: ci interessa progettare il Paese che vogliamo abitare.</p>          <p>Il nostro posizionamento rifiuta le forme tradizionali della rappresentanza e del dibattito d'opinione:</p>
+
+          <ul class="manifesto-list">
+            <li><strong>Non siamo un think tank:</strong> Rifiutiamo la dinamica dei panel e delle conferenze in cui esperti e tecnocrati si limitano a reiterare diagnosi di superficie per ottenere visibilità e consenso, senza conoscere la reale natura dei cambiamenti di cui parlano.</li>
+            <li><strong>Non siamo un’associazione culturale:</strong> La consapevolezza critica del presente è destinata a rimanere sterile se non viene orientata all'azione concreta e alla produzione materiale.</li>
+          </ul>
+
+          <p><strong>Siamo policy-thinkers operativi.</strong></p>
+          <p><strong>Infra</strong> è un’associazione politica formata da chi abita e attraversa quotidianamente questi mondi: lavoratori del settore tech, avvocati, funzionari e dirigenti della Pubblica Amministrazione, ingegneri e creativi.</p>
+          <p>Il nostro obiettivo è materiale: elaborare proposte politiche e normative solide che rispondano ai problemi reali di oggi, emergendo direttamente dal dibattito e dal lavoro d'analisi dell'associazione. Non organizziamo la passerella dei soliti dibattiti; apriamo cantieri di policy in cui ciascun partecipante mette a disposizione le proprie competenze e la propria sensibilità, affrontando in modo rigoroso e analitico le questioni che toccano da vicino la vita, il lavoro e il futuro della nostra comunità.</p>
         </div>
 
         <!-- REGOLE DI INGAGGIO -->
         <div class="rules-grid">
           <div class="rule-card">
             <div class="rule-num">01 / METODO</div>
-            <h3>Timeboxing</h3>
+            <h4>Timeboxing</h4>
             <p>Interventi operativi di massimo 3 minuti nei tavoli. Zero retorica, solo tesi ed evidenze.</p>
           </div>
           <div class="rule-card">
             <div class="rule-num">02 / SICUREZZA</div>
-            <h3>Fonti Protette</h3>
+            <h4>Fonti Protette</h4>
             <p>Tutela rigorosa dei contributi tecnici provenienti da PA, industria e accademia.</p>
           </div>
           <div class="rule-card">
             <div class="rule-num">03 / STRUTTURA</div>
-            <h3>Orizzontalità</h3>
+            <h4>Orizzontalità</h4>
             <p>Nessun vertice accademico. Valgono solo il rigore dei dati e la fattibilità della policy.</p>
           </div>
           <div class="rule-card">
             <div class="rule-num">04 / OUTPUT</div>
-            <h3>Codice & Norme</h3>
+            <h4>Codice & Norme</h4>
             <p>Ogni cantiere produce schemi di legge, emendamenti o infrastrutture open-source.</p>
           </div>
         </div>
